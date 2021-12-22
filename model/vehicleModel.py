@@ -1,0 +1,6 @@
+"""
+
+Mongo schema for vehicles.
+
+
+"""
