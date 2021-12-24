@@ -3,8 +3,8 @@ from controller.locationRoutes import router
 app = FastAPI()
 
 
-@app.get("/")
+@app.get("/healthcheck")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "ok"}
 
 app.include_router(router)
