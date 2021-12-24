@@ -13,11 +13,16 @@ Routes here:
 from fastapi import APIRouter
 from service.HaversineService import linear_distance
 from model.linearDistance import linearDistance
-
+from model.pairCoordinate import pairCoordinate
 router = APIRouter()
 
 
 @router.get("/linearDistance")
-def get_linear_distance(local: linearDistance):
-    result_in_kilometers = linear_distance(local)
-    return {"message": result_in_kilometers}
+def get_linear_distance(distance: linearDistance):
+    result_in_kilometers = linear_distance(distance)
+    return {"Kilometers": result_in_kilometers}
+
+
+@router.get("/whereAmI")
+def get_where_am_i(local: pairCoordinate):
+    return {"Message": "Rio de janeiro, Brazil."}

@@ -1,6 +1,5 @@
-
-
 from pydantic import BaseModel
+
 
 class linearDistance(BaseModel):
     first_lon_coordinate: float
