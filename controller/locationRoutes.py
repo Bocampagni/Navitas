@@ -10,3 +10,14 @@ Routes here:
 
 """
 
+from fastapi import APIRouter
+from service.HaversineService import linear_distance
+from model.linearDistance import linearDistance
+
+router = APIRouter()
+
+
+@router.get("/linearDistance")
+def get_linear_distance(local: linearDistance):
+    result_in_kilometers = linear_distance(local)
+    return {"message": result_in_kilometers}
