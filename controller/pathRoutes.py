@@ -9,10 +9,11 @@ Routes here:
 
 from fastapi import APIRouter
 from model.linearDistance import linearDistance
-
+from service.shortestPathService import getShortestPath
 pathRouter = APIRouter()
 
 
 @pathRouter.post("/ShPath")
 async def getTheShortestPath(distance: linearDistance):
-    return {"Message": "Graph here"}
+    shortestPathInMeters = getShortestPath(distance)
+    return {"Shortest Path": shortestPathInMeters}
