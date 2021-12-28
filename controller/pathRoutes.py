@@ -16,4 +16,4 @@ pathRouter = APIRouter()
 @pathRouter.post("/ShPath")
 async def getTheShortestPath(distance: linearDistance):
     shortestPathInMeters = getShortestPath(distance)
-    return {"Shortest Path": shortestPathInMeters}
+    return {"ShortestPath": shortestPathInMeters}
