@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from controller.locationRoutes import router
 from controller.pathRoutes import pathRouter
+from controller.shippingRoutes import shippingRoute
 app = FastAPI()
 
 
@@ -11,3 +12,4 @@ async def root():
 
 app.include_router(router)
 app.include_router(pathRouter)
+app.include_router(shippingRoute)
