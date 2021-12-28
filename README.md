@@ -9,7 +9,7 @@
 
 
 
-## Overview
+
 Using Open Street map, Taxicab and Nominatim, this API returns geolocation data given two geo-coordinates.
 
 You can retrieve the cost to ship a weightless item from a point to another. You also can see this as the cost of a Uber/99/cabify ride.
