@@ -18,13 +18,13 @@ from service.whereAmIService import getLocation
 router = APIRouter()
 
 
-@router.get("/linearDistance")
+@router.post("/linearDistance")
 def get_linear_distance(distance: linearDistance):
     result_in_kilometers = linear_distance(distance)
     return {"Kilometers": result_in_kilometers}
 
 
-@router.get("/whereAmI")
+@router.post("/whereAmI")
 def get_where_am_i(local: pairCoordinate):
     location = getLocation(local)
     return {"Location": location}
