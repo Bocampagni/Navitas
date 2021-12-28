@@ -14,6 +14,7 @@ from fastapi import APIRouter
 from service.HaversineService import linear_distance
 from model.linearDistance import linearDistance
 from model.pairCoordinate import pairCoordinate
+from service.whereAmIService import getLocation
 router = APIRouter()
 
 
@@ -25,4 +26,5 @@ def get_linear_distance(distance: linearDistance):
 
 @router.get("/whereAmI")
 def get_where_am_i(local: pairCoordinate):
-    return {"Message": "Rio de janeiro, Brazil."}
+    location = getLocation(local)
+    return {"Location": location}
