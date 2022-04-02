@@ -1,0 +1,16 @@
+version: '3'
+services:
+  database:
+    image: 'mongo'
+    container_name: 'my-mongo-container'
+    environment:
+      - MONGO_INITDB_DATABASE=shipping
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    ports:
+      - '27017:27017'
+  application:
+    build: 'Dockerfile'
+    container_name: 'shipping-service'
+    ports:
+      - '80:80'

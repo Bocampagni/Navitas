@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from controller.locationRoutes import router
-from controller.pathRoutes import pathRouter
-from controller.shippingRoutes import shippingRoute
+from src.controller.locationRoutes import router
+from src.controller.pathRoutes import pathRouter
+from src.controller.shippingRoutes import shippingRoute
 app = FastAPI()
 
 
