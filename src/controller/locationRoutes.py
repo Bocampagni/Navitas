@@ -11,10 +11,10 @@ Routes here:
 """
 
 from fastapi import APIRouter
-from service.HaversineService import linear_distance
-from model.linearDistance import linearDistance
-from model.pairCoordinate import pairCoordinate
-from service.whereAmIService import getLocation
+from src.service.HaversineService import linear_distance
+from src.model.linearDistance import linearDistance
+from src.model.pairCoordinate import pairCoordinate
+from src.service.whereAmIService import getLocation
 router = APIRouter()
 
 

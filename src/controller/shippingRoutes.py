@@ -8,13 +8,13 @@ Routes here:
 """
 
 from fastapi import APIRouter
-from model.linearDistance import linearDistance
-from service.shortestPathService import getShortestPath
-from service.shippingPrice import getShippingPrice
+from src.model.linearDistance import linearDistance
+from src.service.shortestPathService import getShortestPath
+from src.service import shippingPriceService
 shippingRoute = APIRouter()
 
 
 @shippingRoute.post("/shipping")
-async def getShippingPrice(distance: linearDistance):
-    distance_in_kilometers = getShortestPath(distance)
-    return getShippingPrice(distance_in_kilometers)
+def getShippingPrice(distance: linearDistance):
+    shortestPathInMeters = getShortestPath(distance)
+    return shippingPriceService.getShippingPrice(shortestPathInMeters)

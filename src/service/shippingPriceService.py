@@ -3,13 +3,12 @@
 Get the fuel price from database
 
 """
-from ..repository.mongoConnection import mongoConnection
+from src.repository.mongoConnection import getMongoConnection
 
 
-# Todo Change value from hardcoded to dynamic stored data.
 def getShippingPrice(distance):
-    fuelPrices = mongoConnection()
-
+    fuelTable = getMongoConnection()
+    fuelPrices = fuelTable.find_one()
     return {
         "car": {
             "gasoline": distance * fuelPrices['gasoline'],

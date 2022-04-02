@@ -8,8 +8,8 @@ Routes here:
 """
 
 from fastapi import APIRouter
-from model.linearDistance import linearDistance
-from service.shortestPathService import getShortestPath
+from src.model.linearDistance import linearDistance
+from src.service.shortestPathService import getShortestPath
 pathRouter = APIRouter()
 
 
